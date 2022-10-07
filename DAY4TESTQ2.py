@@ -1,7 +1,11 @@
-str1 = input("Enter the First String  = ")
-str2 = input("Enter the Second String = ")
-
-if(sorted(str1) == sorted(str2)):
-    print("Two Strings are Anagrams.")
-else:
-    print("Two Strings are not Anagrams.")
+from collections import defaultdict
+ 
+test_list = ['EAT','TEA','TAN','ATE','HAT','BAT']
+print("The original list : " + str(test_list))
+ 
+temp = defaultdict(list)
+for ele in test_list:
+    temp[str(sorted(ele))].append(ele)
+res = list(temp.values())
+ 
+print("The grouped Anagrams : " + str(res))
